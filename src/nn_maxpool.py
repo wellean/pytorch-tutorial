@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 作者：小土堆
-# 公众号：土堆碎念
+# 公众号：我是土堆
 
 import torch
 import torchvision
