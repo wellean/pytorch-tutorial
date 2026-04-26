@@ -9,12 +9,13 @@ from typing import List, Tuple
 
 
 def build_note_path(base_dir: Path, note_date: date) -> Path:
-    return base_dir / f"note_{note_date:%Y_%m_%d}.md"
+    return base_dir / "notes" / f"note_{note_date:%Y_%m_%d}.md"
 
 
 def ensure_note_file(note_path: Path) -> None:
     if note_path.exists():
         return
+    note_path.parent.mkdir(parents=True, exist_ok=True)
     note_path.write_text(f"# {note_path.stem}\n\n", encoding="utf-8")
 
 
