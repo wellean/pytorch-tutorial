@@ -2,6 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "一键记录当天全部聊天(从 chat_temp.txt)",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "tools/daily_chat_logger.py",
+        "--from-file",
+        "chat_temp.txt",
+        "--fallback-raw"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
       "label": "一键记录当天全部聊天(剪贴板)",
       "type": "shell",
       "command": "python",
