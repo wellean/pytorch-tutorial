@@ -103,6 +103,9 @@ def append_raw_transcript_with_dedup(
 
 
 def read_clipboard_text() -> str:
+    import os
+    if not os.environ.get("DISPLAY"):
+        raise SystemExit("服务器无桌面环境（找不到 $DISPLAY 变量），无法直接读取剪贴板。\n建议方案：\n1. 在当前目录下新建一个 chat_temp.txt\n2. 将本地内容粘贴进 chat_temp.txt 中\n3. 运行含 --from-file 参数的自动记录 Task，或手动执行：python tools/daily_chat_logger.py --from-file chat_temp.txt --fallback-raw")
     try:
         import tkinter as tk
     except Exception as exc:
