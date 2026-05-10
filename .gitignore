@@ -4,3 +4,5 @@
 /logs_*
 /ex/dataset
 /ex/logs
+/models
+/ex/models
